@@ -16,10 +16,15 @@ HTML5, JavaScript, CSS3
 Target devices: iOS, Android, Web browsers
 
 [three.js](http://threejs.org/)
+
 [d3.js](http://d3js.org/)
+
 [Google Maps](https://developers.google.com/maps/documentation/javascript/)
+
 [Phonegap Build](https://build.phonegap.com/)
+
 [Astro Viewer](http://iss.astroviewer.net/)
+
 [Single Page Client](http://data.nasa.gov/docs/spaceapps/challenges/spacestationtelemetry/issmin.html)
 
 ### Public Data
