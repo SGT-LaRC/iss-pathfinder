@@ -4,6 +4,7 @@
 App.controller('home', function (page) {
 	$(page).on('appShow', function () {
 
+		/*
 		var coordinates = []; //Array to hold ISS coordinates
 		var flightPath = null;
 
@@ -114,10 +115,11 @@ App.controller('home', function (page) {
 
 			return [lat, lon, alt];
 		}
+		*/
 
 		/* Modified from http://www.abecedarical.com/javascript/script_clock.html
 		*  returns: GMST time in degrees
-		*/
+		*
 		function getGMST()
 		{
 			var now = new Date(); 
@@ -163,8 +165,9 @@ App.controller('home', function (page) {
 
 		function removePolyline() {
 			flightPath.setMap(null);
-		}
+		} */
 
+		initializeMaps();
 		
 	});
 });

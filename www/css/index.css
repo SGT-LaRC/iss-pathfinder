@@ -1,4 +1,4 @@
-html, body, #simple-map-canvas {
+html, body, #simple-map-canvas, #map_canvas1, #map_canvas2 {
 	height: 100%;
 	margin: 0;
 	padding: 0;

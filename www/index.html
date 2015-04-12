@@ -16,7 +16,27 @@
         <button class="app-button right" data-target="page3">d3.js</button>
       </div>
       <div class="app-content">
-        <div id="simple-map-canvas"></div>
+        <!-- div id="simple-map-canvas"></div -->
+        <div id="map_canvas1" style="width:100%; height:400px; margin:0px; border:1px solid #cccccc; font: 10pt sans-serif,Arial,Helvetica;"></div>
+
+        <div style="width:100%">
+          <div id="cockpit" style="width:215px; height:235px; border:1px solid #cccccc; background:#eeeeee; float:right; font-size:90%">
+            <p class="cockpitHeader">Ground point</p>
+            <p class="cockpitData" id="gpt">&nbsp;<br />&nbsp;</p>
+            <p class="cockpitHeader">Time</p>
+            <p class="cockpitData" id="time">&nbsp;</p>
+            <p class="cockpitHeader">Orbital speed</p>
+            <p class="cockpitData" id="speed">&nbsp;<br />&nbsp;</p>
+            <p class="cockpitHeader">Altitude</p>
+            <p class="cockpitData" id="alt">&nbsp;</p>
+            <p>
+              <span class="milesSelector"><input type="radio" name="mi-km" onclick="handleMiles(true)" id="milesSelector" /> miles</span>
+              <span class="milesSelector"><input type="radio" name="mi-km" onclick="handleMiles(false)" /> km</span>
+            </p>
+          </div>
+          <div id="map_canvas2" style="width:512px; height:235px; margin:0px; padding:0px; border:1px solid #cccccc;"></div>
+        </div>
+
       </div>
     </div>
 
@@ -67,6 +87,10 @@
     <script src="js/CSS3DRenderer.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+    <script src='http://astroviewer-sat2d.appspot.com/orbit?var=orbit'></script>
+    <script src="js/daynightoverlay.js"></script>
+    <script src="js/orbit.js"></script>
 
     <script src="js/controller.js"></script>
 
