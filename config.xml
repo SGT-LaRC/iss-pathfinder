@@ -2,7 +2,7 @@
 <widget id="com.sgtinc.lites.isspath" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>ISS Pathfinder</name>
     <description>
-        ISS Path is a mobile project for Space Apps 2015 Challenge. The app will utilize public telemetry data for the International Space Station and the devices orientation and location data to create an engaging user experience.
+        ISS Pathfinder is a mobile project for Space Apps 2015. It is in response to the Space Station Telemetry App challenge. The app will utilize public telemetry data for the International Space Station and the device orientation and location data to create an engaging user experience. User will get a push notification when a visual pass of ISS is about to happen at their location. The user can then open the app, point their device to the sky and the app will direct the user visually to the correct location of ISS in the sky.
     </description>
     <author email="kjones@sgt-inc.com" href="http://www.sgt-inc.com">
         SGT LITES Space Apps 2015 Team
