@@ -84,37 +84,69 @@ App.controller('home', function (page) {
 		});
 
 		//http://stackoverflow.com/questions/18253546/ecef-to-lla-lat-lon-alt-in-java
-		var a = 6378137;
-		var f = 0.0034;
-		var b = 6.3568e6;
-		var e = Math.sqrt((Math.pow(a, 2) - Math.pow(b, 2)) / Math.pow(a, 2));
-		var e2 = Math.sqrt((Math.pow(a, 2) - Math.pow(b, 2)) / Math.pow(b, 2));
+		// WGS84 ellipsoid constants
+		var a = 6378137; // radius
+		var e = 8.1819190842622e-2;  // eccentricity
+		var asq = Math.pow(a,2);
+		var esq = Math.pow(e,2);
 
-		function ecef2lla(x, y, z) {
-		  x=x*1000;
-		  y=y*1000;
-		  z=z*1000;
-		    var lla = [];
-		    var lan, lon, height, N , theta, p;
+		function ecef2lla(x, y, z){
+			x*=1000;
+			y*=1000;
+			z*=1000;
+			var b = Math.sqrt( asq * (1-esq) );
+			var bsq = Math.pow(b,2);
+			var ep = Math.sqrt( (asq - bsq)/bsq);
+			var p = Math.sqrt( Math.pow(x,2) + Math.pow(y,2) );
+			var th = Math.atan2(a*z, b*p);
+			var lon = Math.atan2(y,x);
+			var lat = Math.atan2( (z + Math.pow(ep,2)*b*Math.pow(Math.sin(th),3) ), (p - esq*a*Math.pow(Math.cos(th),3)) );
+			var N = a/( Math.sqrt(1-esq*Math.pow(Math.sin(lat),2)) );
+			var alt = p / Math.cos(lat) - N;
 
-		    p = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+			// mod lat to 0-2pi
+			lon = lon % (2*Math.PI);
+			lat = lat * 180 / Math.PI;
+			lon = lon * 180 / Math.PI;
+			lon = ((lon-getGMST())%360);
+			if (lon < -180 ) lon +=360;
+			if (lon > 180 ) lon -=360;
 
-		    theta = Math.atan((z * a) / (p * b));
+			return [lat, lon, alt];
+		}
 
-		    lon = Math.atan(y / x);
-
-		    lat = Math.atan(((z + Math.pow(e2, 2) * b * Math.pow(Math.sin(theta), 3)) / ((p - Math.pow(e, 2) * a * Math.pow(Math.cos(theta), 3)))));
-		    N = a / (Math.sqrt(1 - (Math.pow(e, 2) * Math.pow(Math.sin(lat), 2))));
-
-		    var m = (p / Math.cos(lat));
-		    height = m - N;
-
-		    lon = lon * 180 / Math.PI;
-		    lat = lat * 180 / Math.PI; 
-		    lla[0] = lat;
-		    lla[1] = lon;
-		    lla[2] = height;
-		    return lla;
+		/* Modified from http://www.abecedarical.com/javascript/script_clock.html
+		*  returns: GMST time in degrees
+		*/
+		function getGMST()
+		{
+			var now = new Date(); 
+		    var year   = now.getUTCFullYear();
+		    var month  = now.getUTCMonth() + 1;
+		    var day    = now.getUTCDate();
+		    var hour   = now.getUTCHours();
+		    var minute = now.getUTCMinutes();
+		    var second = now.getUTCSeconds();
+		    if( month == 1 || month == 2 ) {
+				year = year - 1;
+				month = month + 12;
+		    }
+		    var a = Math.floor( year/100 );
+		    var b = 2 - a + Math.floor( a/4 );
+		    var c = Math.floor(365.25 * year);
+		    var d = Math.floor(30.6001 * (month + 1));
+		    // days since J2000.0   
+		    var jd = b + c + d - 730550.5 + day + (hour + minute/60.0 + second/3600.0)/24.0;
+		    var jt   = jd/36525.0; // julian centuries since J2000.0         
+		    var GMST = 280.46061837 + 360.98564736629*jd + 0.000387933*jt*jt - jt*jt*jt/38710000;           
+		    if( GMST > 0.0 ) {
+		        while( GMST > 360.0 )
+		            GMST -= 360.0;
+		    } else {
+		        while( GMST < 0.0 )
+		            GMST += 360.0;
+		    }   
+		    return GMST;
 		}
 
 		function addPolyline(map,coordinates) {
