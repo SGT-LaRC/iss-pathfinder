@@ -54,10 +54,12 @@
 /usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/img/icon_96.png \
 /usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/img/icon_full.png \
 /usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/img/logo.png \
+/usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/img/world.jpg \
 /usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/js/app.min.js \
 /usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/js/controller.js \
 /usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/js/CSS3DRenderer.js \
 /usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/js/d3.v3.min.js \
+/usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/js/globe.js \
 /usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/js/index.js \
 /usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/js/jquery-2.1.3.min.js \
 /usr/local/web/htdocs/kjw3/iss-pathfinder/platforms/android/assets/www/js/lightstreamer.js \
