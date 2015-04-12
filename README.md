@@ -38,6 +38,14 @@ Target devices: iOS, Android, Web browsers
 
 [Single Page Client](http://data.nasa.gov/docs/spaceapps/challenges/spacestationtelemetry/issmin.html)
 
+[JS SGP4 Propagator](https://github.com/shashwatak/satellite-js)
+
+[Celestrak ISS TLE](http://www.celestrak.com/cgi-bin/TLE.pl?CATNR=25544) 
+
+[Wheretheiss API](http://wheretheiss.at/w/developer)
+
+[NASA ISS Orbital Elements](http://spaceflight.nasa.gov/realdata/elements/)
+
 ### Public Data
 
 [ISS Telemetry Data Dictionary](http://spacestationlive.jsc.nasa.gov/resources/adcoTelemetry.html)
