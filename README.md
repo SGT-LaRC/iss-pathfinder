@@ -9,7 +9,18 @@ Full Phonegap version of the iss-path repo
 
 ISS Pathfinder is a mobile project for Space Apps 2015. It is in response to the Space Station Telemetry App challenge. The app will utilize public telemetry data for the International Space Station and the device orientation and location data to create an engaging user experience. User will get a push notification when a visual pass of ISS is about to happen at their location. The user can then open the app, point their device to the sky and the app will direct the user visually to the correct location of ISS in the sky.
 
-## Resources
+### Team
+
+* [Brendan Moeller](https://github.com/bmolz)
+* [Will Colson](https://github.com/wtcolson)
+* [Kevin Jones](https://github.com/kjw3)
+
+#### Mentors
+
+* Richard Jessop
+* Mike Day
+
+### Resources
 
 HTML5, JavaScript, CSS3
 
