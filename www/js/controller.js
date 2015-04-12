@@ -68,7 +68,10 @@ App.controller('home', function (page) {
 					if (xupdated && yupdated) {
 						var lla = ecef2lla(x,y,z);
 
-						coordinates.push(new google.maps.LatLng(lla[0], lla[1]));
+						position = new google.maps.LatLng(lla[0], lla[1]);
+
+						map.setCenter(position)
+						coordinates.push(position);
 
 						if(null != flightPath) removePolyline();
 
@@ -533,20 +536,6 @@ App.controller('page3', function (page) {
 			        .duration(1000)
 			        .attr("r", 40);
 			};
-		});
-	});
-});
-
-/*
-** Page4 controller
-*/
-App.controller('page4', function (page) {
-	$(page).on('appShow', function () {
-		require.config({paths: {webglEarth: "js/webglearthapi"}});
-
-		require(["webglEarth"], function(webglEarth) {
-			var options = { zoom: 3.0, position: [47.19537,8.524404] };
-			var earth = new WE.map('earth_div', options); 
 		});
 	});
 });
