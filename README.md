@@ -41,3 +41,7 @@ Target devices: iOS, Android, Web browsers
 ### Public Data
 
 [ISS Telemetry Data Dictionary](http://spacestationlive.jsc.nasa.gov/resources/adcoTelemetry.html)
+
+### Icon Credit
+
+[NASA's Marshall Space Flight Center](https://flic.kr/p/7kbYmD)
